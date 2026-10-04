@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Limp Bizkit | Супер Мерч</title>
+    <style>
+        :root {
+            --main-bg: #1a1a1a;
+            --card-bg: #242424;
+            --accent: #ff3333;
+            --text: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--main-bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-width: 1100px; 
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        
+        .container {
+            width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        
+        .header {
+            background-color: #111111;
+            border-bottom: 2px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .brand-logo {
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .brand-logo span {
+            color: var(--accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        
+        .hero {
+            background: linear-gradient(135deg, #111111 0%, #2c0505 100%);
+            text-align: center;
+            padding: 90px 0;
+        }
+
+        .hero-content {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 12px 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #cc2424;
+            transform: translateY(-2px);
+        }
+
+        .products-section {
+            margin: 60px auto;
+        }
+
+        .section-heading {
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 320px);
+            justify-content: space-between; 
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #333;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: var(--accent);
+            transform: scale(1.02);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-body .btn {
+            padding: 8px 15px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .info-section {
+            background-color: #111111;
+            padding: 60px 0;
+        }
+
+        .info-content {
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .info-content h2 {
+            font-size: 28px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .info-content p {
+            color: #cccccc;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 14px;
+            color: var(--text-muted);
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar container">
+            <div class="brand-logo">Limp<span>Bizkit</span></div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Главная</a></li>
+                <li><a href="#catalog">Магазин</a></li>
+                <li><a href="#about">О нас</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>СУПЕР мерч Limp Bizkit</h1>
+            <p>Добро пожаловать в (не)официальный магазин шмоток для ценителей оригинального Nu-Metal звука и уличного стиля.</p>
+            <a href="#catalog" class="btn">Смотреть каталог</a>
+        </div>
+    </section>
+
+    <main id="catalog" class="products-section container">
+        <h2 class="section-heading">Новые поступления</h2>
+        <div class="products-grid">
+            
+            <article class="product-card">
+                <img src="https://famshop.ru/wp-content/uploads/2026/05/photo_2026-05-24-17.38.25.jpeg" alt="Красная кепка">
+                <div class="card-body">
+                    <h3>Фирменная Кепка</h3>
+                    <p>Классическая красная бейсболка. Идеальная посадка, прочный материал, регулируемый размер.</p>
+                    <button class="btn">В корзину</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://storage.vsemayki.ru/images/0/3/3749/3749277/previews/people_20_manhoodiefull_front_black_936.webp" alt="Черное худи">
+                <div class="card-body">
+                    <h3>Оверсайз Худи</h3>
+                    <p>Утепленная толстовка свободного кроя с плотным капюшоном. Выполнена из качественного хлопка.</p>
+                    <button class="btn">В корзину</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://avatars.mds.yandex.net/get-mpic/1943683/2a00000194647df6901f4fbd57ab485e64d4/orig" alt="Коллекционный винил">
+                <div class="card-body">
+                    <h3>Виниловая Пластинка</h3>
+                    <p>Эксклюзивное переиздание легендарного альбома на тяжелом 180-граммовом виниле.</p>
+                    <button class="btn">В корзину</button>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <section id="about" class="info-section">
+        <div class="info-content">
+            <h2>История и Стиль</h2>
+            <p>Основанная в 1994 году в Джексонвилле, группа Limp Bizkit стерла границы между тяжелым роком и хип-хопом. Наш мерч отражает дух этой эпохи: максимальный комфорт и верность уличной культуре. Все вещи созданы для всех черт возьми.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Limp Bizkit Aloha. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
